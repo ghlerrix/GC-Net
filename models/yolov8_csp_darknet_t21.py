@@ -3,15 +3,14 @@ from typing import List, Tuple, Union
 
 import torch
 import torch.nn as nn
-from mmcv.cnn import ConvModule, DepthwiseSeparableConvModule
-from mmdet.models.backbones.csp_darknet import CSPLayer, Focus
+from mmcv.cnn import ConvModule
 from mmdet.utils import ConfigType, OptMultiConfig
 
 from mmyolo.registry import MODELS
-from ..layers import CSPLayerWithTwoConv, SPPFBottleneck
-from ..utils import make_divisible, make_round
-from .base_backbone import BaseBackbone
-from .attention_layers import LastLayer, AxialLayer, Axial
+from mmyolo.models.layers import CSPLayerWithTwoConv, SPPFBottleneck
+from mmyolo.models.utils import make_divisible, make_round
+from mmyolo.models.backbones.base_backbone import BaseBackbone
+from .attention_layers import LastLayer, Axial
 
 
 @MODELS.register_module()
